@@ -58,7 +58,7 @@ Ziel des Datensatzes ist die binäre Klassifikation von Parkinson-Erkrankten und
 
 Der Datensatz weist eine deutliche Klassenungleichverteilung auf. Sowohl auf Personenebene als auch auf Aufnahmeebene sind Parkinson-Patient:innen etwa dreimal so häufig vertreten wie gesunde Kontrollpersonen. Von insgesamt 195 Sprachaufnahmen stammen 147 von an Parkinson erkrankten Personen, während lediglich 48 Aufnahmen von gesunden Personen vorliegen. Diese ausgeprägte Klassenimbalance könnte eine Herausforderung für Klassifikationsmodelle darstellen.
 
-![Zielvariable: statu](/images/status.png)
+![Zielvariable: status](/images/status.png)
 
 ### Featureanalyse
 Der Datensatz umfasst akustische, rauschbasierte sowie nichtlineare Merkmale, die unterschiedliche Aspekte der Stimmproduktion abbilden. Während Jitter- und Shimmer-Parameter kurzfristige Instabilitäten der Frequenz und Amplitude beschreiben, erfassen nichtlineare Maße wie RPDE, DFA oder PPE komplexe zeitliche Strukturen des Sprachsignals. 
@@ -194,18 +194,11 @@ Die Evaluation der Baseline-Modelle zeigte, dass nichtlineare Verfahren wie Rand
 
 Insgesamt erwies sich der Random Forest Classifier als das leistungsstärkste und zugleich robusteste Modell im gesamten Analyseprozess. Er erzielte sowohl in der Baseline-Evaluation als auch im Vergleich der Modellvarianten die besten Ergebnisse.
 
-# 9. Fazit
-Obwohl die gesunde Klasse deutlich unterrepräsentiert ist, erzielten alle untersuchten Modelle hohe Klassifikationsleistungen. Dies lässt darauf schließen, dass insbesondere nichtlineare Sprachmerkmale eine starke Trennschärfe zur Parkinsondiagnostik aufweisen.
-
-Die Evaluation der Baseline-Modelle zeigte, dass nichtlineare Verfahren wie Random Forest, Gradient Boosting und k-Nearest Neighbors den linearen Ansätzen überlegen sind. Die zusätzliche Bewertung mittels stratifizierter Cross-Validation bestätigte diese Beobachtung und verdeutlichte zugleich, dass schwellenwertunabhängige Metriken wie ROC-AUC und PR-AUC bei kleinen Testmengen besser geeignet sind als Accuracy. Der Einsatz einer Random-Forest-basierten Feature Selection führte entgegen der Erwartung zu einer durchgängig schlechteren Modellleistung, was darauf hindeutet, dass auch stark korrelierte Merkmale – insbesondere Shimmer-Features – relevante Zusatzinformationen liefern und zur Stabilisierung der Modelle beitragen.
-
-Insgesamt erwies sich der Random Forest Classifier als das leistungsstärkste und zugleich robusteste Modell im gesamten Analyseprozess. Er erzielte sowohl in der Baseline-Evaluation als auch im Vergleich der Modellvarianten die besten Ergebnisse.
-
-# 10. Ausblick
+# 9. Ausblick
 
 In zukünftigen Arbeiten würde ich gerne reale Audiodateien direkt analysieren. Die vorliegende Arbeit diente primär dazu, ein grundlegendes Verständnis relevanter Merkmale für die Parkinson-Diagnostik auf Basis tabellarischer Sprachfeatures zu entwickeln. Aufbauend auf diesen Erkenntnissen bietet es sich an, den Figshare-Datensatz mit Roh-Audioaufnahmen [4] zu verwenden, um realistische Sprachsignale zu untersuchen und moderne, audio-basierte Analyseansätze umzusetzen. Die Auswertung der Audiodaten könnte mithilfe von Parselmouth [3], einer Python-Schnittstelle zu Praat, erfolgen, wodurch eine präzise und reproduzierbare Extraktion phonetischer und akustischer Merkmale ermöglicht wird.
 
-# 11. Quellen
+# 10. Quellen
 **[1]** Deutsche Gesellschaft für Parkinson und Bewegungsstörungen e. V. (o. J.). *Die Parkinson-Krankheit*. Abgerufen am *29. Dezember 2025*, von https://parkinson-gesellschaft.de/fuer-betroffene/die-parkinson-krankheit/
 
 **[2]** Cao, F., Vogel, A. P., Gharahkhani, P., & Renteria, M. E. (2025). *Speech and language biomarkers for Parkinson’s disease prediction, early diagnosis and progression.* *npj Parkinson’s Disease, 11*(57). https://doi.org/10.1038/s41531-025-00913-4
